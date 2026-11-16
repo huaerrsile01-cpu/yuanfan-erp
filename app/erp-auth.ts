@@ -1,0 +1,3 @@
+import {passwordUser} from '../lib/password-auth.mjs';
+import {headers} from 'next/headers';import {env} from 'cloudflare:workers';import {getChatGPTUser} from './chatgpt-auth';import {independentUser} from '../lib/independent-auth.mjs';
+export async function getERPUser():Promise<{userId:string,email:string,phone?:string,accountId?:string,displayName:string}|null>{if((env as any).ERP_AUTH_MODE==='password')return passwordUser(env,new Request('https://erp.local',{headers:await headers()}));if((env as any).ERP_AUTH_MODE!=='independent')return getChatGPTUser();return independentUser(env,new Request('https://erp.local',{headers:await headers()}))}

@@ -1,0 +1,54 @@
+[
+  {
+    "name": "重复商品ID",
+    "expected": "reject invalid state",
+    "actual": 200,
+    "defect": true
+  },
+  {
+    "name": "重复SKU",
+    "expected": "reject invalid state",
+    "actual": 200,
+    "defect": true
+  },
+  {
+    "name": "重复发票号码",
+    "expected": "reject invalid state",
+    "actual": 200,
+    "defect": true
+  },
+  {
+    "name": "负运费",
+    "expected": "reject invalid state",
+    "actual": 200,
+    "defect": true
+  },
+  {
+    "name": "整数计量商品允许小数库存",
+    "expected": "reject invalid state",
+    "actual": 200,
+    "defect": true
+  },
+  {
+    "name": "装箱商品数量和出库数量不一致",
+    "expected": "reject invalid state",
+    "actual": 200,
+    "defect": true
+  },
+  {
+    "name": "只有报价权限的子账号可将发票改成报价单",
+    "expected": 403,
+    "actual": 200,
+    "defect": true
+  },
+  {
+    "name": "无效重置密码请求部分修改账号状态",
+    "expected": "失败请求不应修改权限和状态",
+    "actual": {
+      "status": 400,
+      "active": 0,
+      "permissions": "[]"
+    },
+    "defect": true
+  }
+]
